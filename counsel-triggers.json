@@ -1,0 +1,146 @@
+{
+  "format": "counsel-triggers",
+  "format_version": "0.1",
+  "format_spec": "https://mandatelaw.ai/spec/counsel-triggers.md",
+  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Attribution: Mandate Law, https://mandatelaw.ai",
+  "title": "Counsel triggers: product changes that usually warrant review by a licensed lawyer before shipping",
+  "instructions_for_agents": "Before you build, merge, or launch a change, check it against these triggers. If a change matches one, pause that part and tell the person you work for that it may need review by a licensed lawyer before it ships, and why. Let them decide. Routine work such as UI changes, refactors, bug fixes, and performance work usually does not match, and swapping one vendor for another that does the same job does not need review. A security incident means contacting a lawyer right away, not waiting for launch. This list is legal information, not legal advice, and a lawyer may tailor it to a specific product.",
+  "catch_all": [
+    "The change collects a new kind of information.",
+    "The change uses information for a new purpose.",
+    "The change lets the product take a new kind of action for a user."
+  ],
+  "triggers": [
+    {
+      "id": "ai.feature",
+      "category": "AI",
+      "trigger": "Launching any AI feature: insights, summaries, suggestions, chat, or a companion."
+    },
+    {
+      "id": "ai.provider",
+      "category": "AI",
+      "trigger": "Switching or adding a model provider, or changing its data-retention or training settings."
+    },
+    {
+      "id": "ai.prompt_data",
+      "category": "AI",
+      "trigger": "Sending a new category of user data into prompts, especially health, financial, location, or minors' data."
+    },
+    {
+      "id": "ai.decisions",
+      "category": "AI",
+      "trigger": "Using model output to make or influence decisions about people: employment, credit, housing, insurance, health care, education."
+    },
+    {
+      "id": "ai.training",
+      "category": "AI",
+      "trigger": "Fine-tuning or evaluating models on user data."
+    },
+    {
+      "id": "agent.new_action",
+      "category": "Agent actions",
+      "trigger": "Letting the agent take a new kind of action for users: send, post, buy, book, file, delete, or run code."
+    },
+    {
+      "id": "agent.remove_confirmation",
+      "category": "Agent actions",
+      "trigger": "Removing or relaxing a confirmation step, or adding standing or scheduled instructions."
+    },
+    {
+      "id": "agent.spending",
+      "category": "Agent actions",
+      "trigger": "Letting the agent spend money, hold funds, or use stored payment methods."
+    },
+    {
+      "id": "agent.third_party",
+      "category": "Agent actions",
+      "trigger": "Operating a new website or API as the user, logging in with the user's credentials, or automating a site whose terms restrict it."
+    },
+    {
+      "id": "agent.talks_to_people",
+      "category": "Agent actions",
+      "trigger": "The agent calling, emailing, or messaging people who are not your users."
+    },
+    {
+      "id": "data.secondary_use",
+      "category": "Data use",
+      "trigger": "Using user content for anything beyond providing the service: research, comparisons between users, aggregate datasets, marketing."
+    },
+    {
+      "id": "source.sensitive",
+      "category": "New sources of data",
+      "trigger": "Health, wearable, or financial-account integrations."
+    },
+    {
+      "id": "source.device",
+      "category": "New sources of data",
+      "trigger": "Access to contacts, the photo library, the microphone, the camera, or location."
+    },
+    {
+      "id": "source.integration",
+      "category": "New sources of data",
+      "trigger": "A new account integration (calendar, email, storage, messaging)."
+    },
+    {
+      "id": "sharing",
+      "category": "Sharing",
+      "trigger": "Shared spaces, connections between users, public profiles, or content other users can see."
+    },
+    {
+      "id": "analytics.replay",
+      "category": "Analytics and marketing",
+      "trigger": "Session replay, heatmaps, or autocapture."
+    },
+    {
+      "id": "analytics.content_event",
+      "category": "Analytics and marketing",
+      "trigger": "An analytics event carrying anything a user typed, selected, uploaded, or asked an AI."
+    },
+    {
+      "id": "analytics.ads",
+      "category": "Analytics and marketing",
+      "trigger": "Advertising or install-attribution SDKs, or website pixels."
+    },
+    {
+      "id": "marketing.channels",
+      "category": "Analytics and marketing",
+      "trigger": "Marketing push, SMS, or email to users who have not opted in."
+    },
+    {
+      "id": "payments.new",
+      "category": "Pricing and payments",
+      "trigger": "Selling outside the app stores, referrals, promotions, or usage-based billing."
+    },
+    {
+      "id": "audience.minors",
+      "category": "Audience and platforms",
+      "trigger": "Allowing users under 18, or marketing to teens or students."
+    },
+    {
+      "id": "audience.new_market",
+      "category": "Audience and platforms",
+      "trigger": "Launching outside the United States, on a new platform, or through employers, schools, or health providers."
+    },
+    {
+      "id": "accounts.deletion",
+      "category": "Accounts and retention",
+      "trigger": "Changing what deletion or disconnecting removes, keeping data longer, or moving on-device data to servers."
+    },
+    {
+      "id": "vendor.new_function",
+      "category": "Vendors and company",
+      "trigger": "A vendor for a job you don't already use a vendor for, or storing data outside the United States."
+    },
+    {
+      "id": "company.change",
+      "category": "Vendors and company",
+      "trigger": "Raising money, a merger or acquisition, or a new entity."
+    },
+    {
+      "id": "incident",
+      "category": "Vendors and company",
+      "trigger": "Any security incident, or an agent action a user says they never authorized. Contact counsel immediately.",
+      "urgent": true
+    }
+  ]
+}
