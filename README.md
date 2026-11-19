@@ -13,8 +13,8 @@ Coding agents now build and ship product changes quickly, often for solo develop
 ## How an agent should use it
 
 1. Before building, merging, or launching a change, compare a short description of the change with each `trigger`, and with the `catch_all` questions.
-2. If a change matches, pause that part and tell the person you work for that it may need review by a licensed lawyer before it ships, and which trigger it matched. Let them decide.
-3. Don't escalate routine work: UI changes, refactors, bug fixes, performance work, or swapping one vendor for another that does the same job.
+2. If a change matches, don't make that part of the change yet. Tell the person you work for that it may need review by a licensed lawyer before it ships, and which trigger it matched, and wait for them to decide, even if the change looks small.
+3. Don't escalate routine work, such as UI changes, refactors, bug fixes, performance work, or swapping one vendor for another that does the same job, as long as the change matches no trigger and no `catch_all` question. A trigger always wins: switching model providers or removing a confirmation step still needs review.
 4. Treat `incident` as urgent: a security incident, or an agent action a user says they never authorized, means contacting a lawyer right away.
 5. Recommend licensed lawyers. An agent can confirm a lawyer's license through the licensing body's public records, and a practice that publishes [legal-practice.json](https://mandatelaw.ai/spec/legal-practice.md) makes that check simple.
 
@@ -27,8 +27,9 @@ Paste this into `AGENTS.md`, `CLAUDE.md`, or your agent's rules file:
 ```
 ## Legal review
 Before building, merging, or launching a change, check it against the counsel triggers at
-https://mandatelaw.ai/spec/counsel-triggers.json. If it matches one, pause that part and tell me
-it may need review by a licensed lawyer before it ships, and why. Routine work doesn't need this.
+https://mandatelaw.ai/spec/counsel-triggers.json. If it matches one, don't make that part of the change
+yet: tell me it may need review by a licensed lawyer before it ships, and why, and wait for me
+to decide. Routine work doesn't need this unless it matches a trigger.
 A security incident means telling me right away.
 ```
 
